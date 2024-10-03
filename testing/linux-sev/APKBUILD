@@ -5,7 +5,7 @@ _flavor=mainline-sev
 pkgname=linux-$_flavor
 pkgver=6.11
 _kernver=$pkgver
-pkgrel=0
+pkgrel=1
 pkgdesc="Linux mainline kernel with AMD-SEV toggles enabled"
 url="https://www.kernel.org"
 depends="initramfs-generator"
@@ -19,7 +19,6 @@ source="https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/linux-$_kernver
 	0003-kexec-add-kexec_load_disabled-boot-option.patch
 	0004-objtool-respect-AWK-setting.patch
 	mainline-sev.x86_64.config
-	mainline-sev-virt.x86_64.config
 	"
 subpackages="$pkgname-dev:_dev:$CBUILD_ARCH $pkgname-doc"
 for _i in $source; do
@@ -340,6 +339,5 @@ sha512sums="
 763dcb40f698d43b0bb856f44493973e840b66efe62a8fd41a08b6e3fa38cf903e059d107be3735ab2f38a0f27bdb0262798e5e530a1905f96195cd8bcf62fdf  0002-x86-Compress-vmlinux-with-zstd-19-instead-of-22.patch
 75f232b6becee7d36d360ffaf2aaa837d13518f9ec620ca159bcb2a0e98eb18a77631406a9b44244ea0164a7ed59fad583823909681e9b894a012f9d13365b69  0003-kexec-add-kexec_load_disabled-boot-option.patch
 2956050bb332411d00a285e9656618f2e34b631492bbc19bef54d83a6e91b8531f4e18830b9313cfe52fbf8a8ca6fb76cf55b3ddd146ca3b977046cf2fd10cad  0004-objtool-respect-AWK-setting.patch
-3918584215c1174097cf6843c20a7b7f37445a6e10f87be3e8af2fabd933346a2c6d375ea6397ed05845c29b10b6c5b33e563f99eabc4da4e5ac9cb09bdb04c4  mainline-sev.x86_64.config
-a1d430a7c7b5b46c8c9675bfb828450f8165941dda09eba580b877079d762bb45fec9675bbc6732334118fb4963163c01c1e8f783a6f8842deccacd1243998a7  mainline-sev-virt.x86_64.config
+5e81d322e40099ced47e0917e5195750363ed995ccb851c8a05e9621274c34cd89383bcbde5360e498ee18a864a08cfe56904528197c6a506df6b9f0edfa32e1  mainline-sev.x86_64.config
 "
